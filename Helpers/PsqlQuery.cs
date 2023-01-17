@@ -24,7 +24,8 @@ namespace FinanceAppBackend.Contexts
             }
         }
         public List<User> GetUsers() {
-            var cs = "Host=localhost;Username=bernardo;Password=12345678;Database=financeapp";
+             // var cs = "Host=localhost;Username=bernardo;Password=12345678;Database=financeapp";
+            var cs = $"Server={Environment.GetEnvironmentVariable("DATABASE_URL")};" + "Port=5432;User Id=<username>;Password=<password>;Database=<database>;";
 
             List<User> userList = new List<User>();
 
@@ -54,7 +55,8 @@ namespace FinanceAppBackend.Contexts
             return userList;
         }
         public Stock Insert(Stock stock) {
-            var cs = "Host=localhost;Username=bernardo;Password=12345678;Database=financeapp";
+             // var cs = "Host=localhost;Username=bernardo;Password=12345678;Database=financeapp";
+            var cs = $"Server={Environment.GetEnvironmentVariable("DATABASE_URL")};" + "Port=5432;User Id=<username>;Password=<password>;Database=<database>;";
 
             using var con = new NpgsqlConnection(cs);
             con.Open();
@@ -73,7 +75,8 @@ namespace FinanceAppBackend.Contexts
             return GetStock(stock.Symbol);
         }
         public Stock Refresh(Stock stock) {
-            var cs = "Host=localhost;Username=bernardo;Password=12345678;Database=financeapp";
+             // var cs = "Host=localhost;Username=bernardo;Password=12345678;Database=financeapp";
+            var cs = $"Server={Environment.GetEnvironmentVariable("DATABASE_URL")};" + "Port=5432;User Id=<username>;Password=<password>;Database=<database>;";
 
             List<User> userList = new List<User>();
 
@@ -94,7 +97,8 @@ namespace FinanceAppBackend.Contexts
             return GetStock(stock.Symbol);
         }
         public Stock GetStock(string symbol) {
-            var cs = "Host=localhost;Username=bernardo;Password=12345678;Database=financeapp";
+             // var cs = "Host=localhost;Username=bernardo;Password=12345678;Database=financeapp";
+            var cs = $"Server={Environment.GetEnvironmentVariable("DATABASE_URL")};" + "Port=5432;User Id=<username>;Password=<password>;Database=<database>;";
 
             List<Stock> stockList = new List<Stock>();
 
@@ -127,7 +131,8 @@ namespace FinanceAppBackend.Contexts
             }
         }
         public Order Create(OrderDto order) {
-            var cs = "Host=localhost;Username=bernardo;Password=12345678;Database=financeapp";
+             // var cs = "Host=localhost;Username=bernardo;Password=12345678;Database=financeapp";
+            var cs = $"Server={Environment.GetEnvironmentVariable("DATABASE_URL")};" + "Port=5432;User Id=<username>;Password=<password>;Database=<database>;";
 
             using var con = new NpgsqlConnection(cs);
             con.Open();
@@ -169,7 +174,8 @@ namespace FinanceAppBackend.Contexts
             return stocklist;
         }
         public List<Stock> Search(string text) {
-            var cs = "Host=localhost;Username=bernardo;Password=12345678;Database=financeapp";
+             // var cs = "Host=localhost;Username=bernardo;Password=12345678;Database=financeapp";
+            var cs = $"Server={Environment.GetEnvironmentVariable("DATABASE_URL")};" + "Port=5432;User Id=<username>;Password=<password>;Database=<database>;";
 
             List<Stock> stockList = new List<Stock>();
 
@@ -202,7 +208,8 @@ namespace FinanceAppBackend.Contexts
             }
         }
         public List<FetchOrderDto> Fetch(int userId) {
-            var cs = "Host=localhost;Username=bernardo;Password=12345678;Database=financeapp";
+            // var cs = "Host=localhost;Username=bernardo;Password=12345678;Database=financeapp";
+            var cs = $"Server={Environment.GetEnvironmentVariable("DATABASE_URL")};" + "Port=5432;User Id=<username>;Password=<password>;Database=<database>;";
 
             List<FetchOrderDto> orderList = new List<FetchOrderDto>();
 
